@@ -142,9 +142,8 @@ function App() {
         draggable
         pauseOnHover
         theme="colored"
-      />
+/>
     </AuthContext.Provider>
-</AuthContext.Provider>
   );
 }
 

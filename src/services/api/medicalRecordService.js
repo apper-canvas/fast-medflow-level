@@ -266,6 +266,6 @@ export const medicalRecordService = {
     } catch (error) {
       console.error("Error deleting medical record:", error?.response?.data?.message || error);
       throw error;
-throw error;
+}
   }
 };
