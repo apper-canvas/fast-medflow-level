@@ -34,13 +34,29 @@ const Header = ({ onMenuClick, title = "MedFlow" }) => {
             <ApperIcon name="Settings" size={20} />
           </Button>
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+<div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
               <ApperIcon name="User" size={16} className="text-white" />
             </div>
             <div className="hidden md:block">
-              <p className="text-sm font-medium text-secondary-900">Dr. Sarah Johnson</p>
-              <p className="text-xs text-secondary-500">Administrator</p>
+              <p className="text-sm font-medium text-secondary-900">Administrator</p>
+              <p className="text-xs text-secondary-500">MedFlow System</p>
             </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                const { ApperUI } = window.ApperSDK;
+                ApperUI.logout().then(() => {
+                  window.location.href = '/login';
+                }).catch(error => {
+                  console.error('Logout failed:', error);
+                });
+              }}
+              className="ml-2 text-secondary-700 hover:text-error-600"
+            >
+              <ApperIcon name="LogOut" size={16} />
+              <span className="ml-1 hidden md:inline">Logout</span>
+            </Button>
           </div>
         </div>
       </div>
